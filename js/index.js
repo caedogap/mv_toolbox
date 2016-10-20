@@ -31,11 +31,15 @@ function generateMetricViewJSON() {
   console.log("Finished...")
 }
 
-function getFormMetric(form) {
+function getFormMetrics(form) {
   var metricsPairs = form.find("#metrics").val().split("\n");
-  //$.map(metricsPairs, function(pair) {
-    
-  //});
+  return $.map(metricsPairs, function(pair) {
+    var metricsFormatted = {};
+    var metric = pair.replace(/ /g, "").split(",");
+    metricsFormatted.id = metric[0];
+    metricsFormatted.computePeriod = metric[1];
+    return metricsFormatted;
+  });
 }
 
 function initComponentClickEvent() {
