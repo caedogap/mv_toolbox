@@ -5,6 +5,7 @@
     <title>MV Toolbox</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <link href="css/balloon.css" rel="stylesheet">
   </head>
   <body>
     <nav id="toolbox" class="navbar navbar-default">
@@ -31,16 +32,25 @@
           <input type="hidden" id="metric-view-type"></input>
             <div class="form-group col-sm-6">
               <label for="mv-id">Id</label>
+              <span data-balloon="Metric view id. Most be unique." data-balloon-pos="up">
+                <span class="glyphicon glyphicon-info-sign" ></span>
+              </span>
               <input type="number" class="form-control" id="mv-id" placeholder="Id">
             </div>
             <div class="form-group col-sm-6">
               <label for="mv-title">Title</label>
+              <span data-balloon="Metric view title." data-balloon-pos="up">
+                <span class="glyphicon glyphicon-info-sign" ></span>
+              </span>
               <input type="input" class="form-control" id="mv-title" placeholder="Title">
             </div>
           </div>
           <div class="row">
             <div class="form-group col-sm-6">
               <label for="mv-size">Size</label>
+              <span data-balloon="Size of the metric view." data-balloon-pos="up">
+                <span class="glyphicon glyphicon-info-sign" ></span>
+              </span>
               <select class="form-control" id="mv-size">
                 <option>Full</option>
                 <option>Half</option>
@@ -49,24 +59,38 @@
             </div>
             <div class="form-group col-sm-6">
               <label for="mv-format">Format</label>
+              <span data-balloon="Format of metric scores." data-balloon-pos="up">
+                <span class="glyphicon glyphicon-info-sign" ></span>
+              </span>
               <select class="form-control" id="mv-format">
                 <option value="number" selected>Number</option>
-                <option value="percent" >Percent</option>
+                <option value="percent">Percent</option>
               </select>
             </div>
           </div>
           <div class="form-group">
             <label for="mv-metrics">Metrics</label>
+            <span data-balloon="One metric per line (id, computedPeriod). Ex: 111, 1MO"
+              data-balloon-pos="up">
+              <span class="glyphicon glyphicon-info-sign" ></span>
+            </span>
             <textarea required class="form-control" id="mv-metrics" rows="5"></textarea>
           </div>
           <div class="form-group">
             <label for="mv-comparisons">Comparisons</label>
+            <span data-balloon="One comparison per line (type, display, identifier). Types: location-level, time-period, metric. Ex: location-level, Area, area"
+              data-balloon-pos="up">
+              <span class="glyphicon glyphicon-info-sign" ></span>
+            </span>
             <textarea class="form-control" id="mv-comparisons" rows="5"></textarea>
           </div>
           <div class="form-group">
             <label class="form-check-label">
               <input class="form-check-input" type="checkbox" value="" id="mv-borderless">
               Borderless
+              <span data-balloon="Show border in metric view." data-balloon-pos="up">
+                <span class="glyphicon glyphicon-info-sign" ></span>
+              </span>
             </label>
           </div>
           <div>
