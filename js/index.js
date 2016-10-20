@@ -26,20 +26,48 @@ function generateMetricViewJSON() {
   json.size = form.find("#size").val();
   json.format = form.find("#format").val();
   json.metrics = getFormMetrics(form);
-
+  json.comparisons = getFormComparisons(form);
   console.log(json);
-  console.log("Finished...")
-}
+  console.log(JSON.stringify(json, null, 2))
+  $("#result").text(JSON.stringify(json, null, 2))
+  console.log("Finished...") }
 
 function getFormMetrics(form) {
   var metricsPairs = form.find("#metrics").val().split("\n");
   return $.map(metricsPairs, function(pair) {
     var metricsFormatted = {};
-    var metric = pair.replace(/ /g, "").split(",");
+    var metric = pair.split(", ");
     metricsFormatted.id = metric[0];
     metricsFormatted.computePeriod = metric[1];
     return metricsFormatted;
   });
+}
+
+function getFormComparisons(form) {
+  var comparisonSets = form.find("#comparisons").val().split("\n");
+  return $.map(comparisonSets, function(set) {
+    var comparison = set.split(", ");
+    return formatComparison(comparison);
+  });
+}
+
+function formatComparison(comparison) {
+  formattedComparison = {};
+  formattedComparison.type = comparison[0];
+  formattedComparison.display = comparison[1];
+  formattedComparison.id = comparison[0] + "-" + $.map(comparison[1].split(/ /g), function(string) { return string.toLowerCase() }).join('-');
+  switch(comparison[0]) {
+    case 'location-level':
+      formattedComparison.level = comparison[2];
+      break;
+    case 'time-period':
+      formattedComparison.time = comparison[2];
+      break;
+    case 'metric':
+      formattedComparison.metric = { id: comparison[2], computePeriod: comparison[3], name: comparison[4] };
+      break;
+  }
+  return formattedComparison;
 }
 
 function initComponentClickEvent() {
