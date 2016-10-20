@@ -25,10 +25,10 @@ function generateMetricViewJSON() {
     json.comparisons = getFormComparisons(form);
   }
   console.log(json);
-  console.log(JSON.stringify(json, null, 2))
-  $("#result").text(JSON.stringify(json, null, 2))
-  console.log("Finished...")
-}
+  console.log(JSON.stringify(json, null, 2));
+  $("#result").text(JSON.stringify(json, null, 2));
+  $("#component-results").show();
+  console.log("Finished...") }
 
 function getFormat(format) {
   var formattedFormat = {};
@@ -85,6 +85,7 @@ function initComponentClickEvent() {
 
 function showForm() {
   $("#component-page").show();
+  $("#component-results").hide();
 }
 
 function setMetricViewType(component) {
