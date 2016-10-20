@@ -1,12 +1,7 @@
 $(document).ready(function() {
-  initForm();
   initGenerateClickEvent();
   initComponentClickEvent();
 });
-
-function initForm() {
-  $("form").hide();
-}
 
 function initGenerateClickEvent() {
   $("#generate").click(function() {
@@ -86,7 +81,7 @@ function initComponentClickEvent() {
 }
 
 function showForm() {
-  $("form").show();
+  $("#component-page").show();
 }
 
 function setMetricViewType(component) {

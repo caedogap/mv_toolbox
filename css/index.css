@@ -6,3 +6,7 @@
 #toolbox .navbar-header {
   margin-top: 10px;
 }
+
+#component-page {
+  display: none;
+}
