@@ -1,56 +1,8 @@
-.clear {
-  clear: both;
-}
 
 #toolbox {
-  width: 960px;
-  height: 100%;
-  text-align: center;
-  display: block;
+  height: 70px;
 }
 
-#canvas {
-  width: 670px;
-  height: 100%;
-  float: left;
-  border: 1px solid black;
-}
-
-#components {
-  width: 286px;
-  height: 100%;
-  float: left;
-  border: 1px solid black;
-}
-
-.line-chart {
- /* background-image: url("./images/line_chart.png");*/
-}
-
-.bar-chart {
-  /*background-image: url("./images/bar_chart.png");*/
-}
-
-.component {
-  width: 150px;
-  height: 150px;
-  display: block;
-  margin: 10px auto 10px auto;
-  border: 1px solid black;
-  cursor: pointer;
-}
-
-.component:hover {
-  background-color: red;
-}
-
-#generate {
-  width: 100px;
-  height: 25px;
-  display: block;
-  cursor: pointer;
-}
-
-#generate:hover {
-  background-color: red;
+#toolbox .navbar-header {
+  margin-top: 10px;
 }

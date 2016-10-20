@@ -1,31 +1,45 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="./js/index.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/index.css"></link>
+    <meta charset="utf-8">
+    <title>MV Toolbox</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
   </head>
   <body>
-    <div id="center">
-      <div id="toolbox">
-        <div id="generate">GENERATE</div>
-        <div id="canvas">
-          <form>
-            <input type="hidden" id="metric-view-type"></input>
-            <div class="form-group">
+    <nav id="toolbox" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <spam class="navbar-brand">MV Toolbox</spam>
+          <button id="line-chart" type="button" class="component btn btn-default btn-lg"
+            label="Line Chart">
+            <span class="glyphicon glyphicon-random" aria-hidden="true"></span> Line Chart
+          </button>
+          <button id="bar-chart" type="button" class="component btn btn-default btn-lg"
+            label="Bar Chart">
+            <span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Bar Chart
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <h1 id="component-title"></h1>
+        <form>
+          <div class="row">
+          <input type="hidden" id="metric-view-type"></input>
+            <div class="form-group col-sm-6">
               <label for="id">Id</label>
               <input type="number" class="form-control" id="id" placeholder="Id">
             </div>
-            <div class="form-group">
+            <div class="form-group col-sm-6">
               <label for="title">Title</label>
               <input type="input" class="form-control" id="title" placeholder="Title">
             </div>
-            <div class="form-group">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="" id="borderless">
-                Borderless
-              </label>
-            </div>
-            <div class="form-group">
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
               <label for="size">Size</label>
               <select class="form-control" id="size">
                 <option>Full</option>
@@ -33,30 +47,44 @@
                 <option>Quarter</option>
               </select>
             </div>
-            <div class="form-group">
+            <div class="form-group col-sm-6">
               <label for="format">Format</label>
               <select class="form-control" id="format">
                 <option>Number</option>
                 <option>Percent</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="metrics">Metrics</label>
-              <textarea class="form-control" id="metrics" rows="5"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="comparisons">Comparisons</label>
-              <textarea class="form-control" id="comparisons" rows="5"></textarea>
-            </div>
-          </form>
-          <textarea id=result></textarea>
-          <button>Copy to clipbox</button>
-        </div>
-        <div id="components">
-          <div id="line-chart" class="component line-chart">LINE CHART</div>
-          <div id="bar-chart" class="component bar-chart">BAR CHART</div>
+          </div>
+          <div class="form-group">
+            <label for="metrics">Metrics</label>
+            <textarea class="form-control" id="metrics" rows="5"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="comparisons">Comparisons</label>
+            <textarea class="form-control" id="comparisons" rows="5"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" value="" id="borderless">
+              Borderless
+            </label>
+          </div>
+          <div>
+            <button id="generate" class="btn btn-default">Generate</button>
+            <button class="btn btn-default">Copy to Clipboard</button>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <h2 for="result">Results</h2>
+          <textarea id="result" class="form-control"></textarea>
         </div>
       </div>
     </div>
-  </body
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>
