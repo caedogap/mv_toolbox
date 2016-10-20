@@ -21,7 +21,7 @@ function generateMetricViewJSON() {
   json.size = form.find("#size").val();
   json.format = getFormat(form.find("#format").val());
   json.metrics = getFormMetrics(form);
-  if(form.find("#comparisons").length > 0) {
+  if($("#comparisons").text().length > 0) {
     json.comparisons = getFormComparisons(form);
   }
   console.log(json);
