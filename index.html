@@ -26,7 +26,7 @@
     <div id="component-page" class="container">
       <div class="row">
         <h1 id="component-title"></h1>
-        <div id="form">
+        <form id="form" onsubmit="event.preventDefault();">
           <div class="row">
           <input type="hidden" id="metric-view-type"></input>
             <div class="form-group col-sm-6">
@@ -57,7 +57,7 @@
           </div>
           <div class="form-group">
             <label for="metrics">Metrics</label>
-            <textarea class="form-control" id="metrics" rows="5"></textarea>
+            <textarea required class="form-control" id="metrics" rows="5"></textarea>
           </div>
           <div class="form-group">
             <label for="comparisons">Comparisons</label>
@@ -73,7 +73,7 @@
             <button id="generate" class="btn btn-default">Generate</button>
             <button class="btn btn-default">Copy to Clipboard</button>
           </div>
-        </div>
+        </form>
       </div>
       <div id="component-results" class="row">
         <div class="form-group">
