@@ -1,3 +1,7 @@
+.clear {
+  clear: both;
+}
+
 #toolbox {
   width: 960px;
   height: 100%;
@@ -19,7 +23,13 @@
   border: 1px solid black;
 }
 
-// COMPONENTS
+.line-chart {
+ /* background-image: url("./images/line_chart.png");*/
+}
+
+.bar-chart {
+  /*background-image: url("./images/bar_chart.png");*/
+}
 
 .component {
   width: 150px;
@@ -27,12 +37,20 @@
   display: block;
   margin: 10px auto 10px auto;
   border: 1px solid black;
+  cursor: pointer;
 }
 
-#line-chart {
-
+.component:hover {
+  background-color: red;
 }
 
-#bar-chart {
+#generate {
+  width: 100px;
+  height: 25px;
+  display: block;
+  cursor: pointer;
+}
 
+#generate:hover {
+  background-color: red;
 }
