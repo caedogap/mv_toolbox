@@ -13,16 +13,16 @@ function initGenerateClickEvent() {
 
 function generateMetricViewJSON() {
   console.log("Generating MV JSON...");
-  var form = $("#form")
+  var form = $("#mv-form")
   var json = {};
-  json.id = form.find("#id").val();
-  json.title = form.find("#title").val();
-  json.type = form.find("#metric-view-type").val();
-  json.borderless = form.find("#borderless").is(":checked");
-  json.size = form.find("#size").val();
-  json.format = getFormat(form.find("#format").val());
+  json.id = $("#mv-id").val();
+  json.title = $("#mv-title").val();
+  json.type = $("#metric-view-type").val();
+  json.borderless = $("#mv-borderless").is(":checked");
+  json.size = $("#mv-size").val();
+  json.format = getFormat(form.find("#mv-format").val());
   json.metrics = getFormMetrics(form);
-  if($("#comparisons").val().length > 0) {
+  if($("#mv-comparisons").val().length > 0) {
     json.comparisons = getFormComparisons(form);
   }
   console.log(json);
@@ -39,7 +39,7 @@ function getFormat(format) {
 }
 
 function getFormMetrics(form) {
-  var metricsPairs = form.find("#metrics").val().split("\n");
+  var metricsPairs = $("#mv-metrics").val().split("\n");
   return $.map(metricsPairs, function(pair) {
     var metricsFormatted = {};
     var metric = pair.split(", ");
@@ -50,7 +50,7 @@ function getFormMetrics(form) {
 }
 
 function getFormComparisons(form) {
-  var comparisonSets = form.find("#comparisons").val().split("\n");
+  var comparisonSets = $("#mv-comparisons").val().split("\n");
   return $.map(comparisonSets, function(set) {
     var comparison = set.split(", ");
     return formatComparison(comparison);
