@@ -1,6 +1,7 @@
 $(document).ready(function() {
   initGenerateClickEvent();
   initComponentClickEvent();
+  initCopyToClipboardEvent();
 });
 
 function initGenerateClickEvent() {
@@ -91,4 +92,11 @@ function showForm() {
 function setMetricViewType(component) {
   $("#metric-view-type").attr("value", component.attr("id"));
   $("#component-title").text(component.attr("label"));
+}
+
+function initCopyToClipboardEvent() {
+  $("#copy-to-clipboard").click(function() {
+    $('#result').select();
+    document.execCommand("copy");
+  });
 }
