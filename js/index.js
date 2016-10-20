@@ -12,7 +12,7 @@ function initGenerateClickEvent() {
 
 function generateMetricViewJSON() {
   console.log("Generating MV JSON...");
-  var form = $("form")
+  var form = $("#form")
   var json = {};
   json.id = form.find("#id").val();
   json.title = form.find("#title").val();
