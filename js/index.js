@@ -24,13 +24,20 @@ function generateMetricViewJSON() {
   json.type = form.find("#metric-view-type").val();
   json.borderless = form.find("#borderless").is(":checked");
   json.size = form.find("#size").val();
-  json.format = form.find("#format").val();
+  json.format = getFormat(form.find("#format").val());
   json.metrics = getFormMetrics(form);
   json.comparisons = getFormComparisons(form);
   console.log(json);
   console.log(JSON.stringify(json, null, 2))
   $("#result").text(JSON.stringify(json, null, 2))
   console.log("Finished...") }
+
+  function getFormat(format) {
+    var formattedFormat = {};
+    formattedFormat.id = format.toLowerCase();
+    formattedFormat.display = (format == 'Number' ? '#' : '%');
+    return formattedFormat;
+  }
 
 function getFormMetrics(form) {
   var metricsPairs = form.find("#metrics").val().split("\n");
