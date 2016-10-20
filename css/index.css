@@ -1,0 +1,38 @@
+#toolbox {
+  width: 960px;
+  height: 100%;
+  text-align: center;
+  display: block;
+}
+
+#canvas {
+  width: 670px;
+  height: 100%;
+  float: left;
+  border: 1px solid black;
+}
+
+#components {
+  width: 286px;
+  height: 100%;
+  float: left;
+  border: 1px solid black;
+}
+
+// COMPONENTS
+
+.component {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 10px auto 10px auto;
+  border: 1px solid black;
+}
+
+#line-chart {
+
+}
+
+#bar-chart {
+
+}
